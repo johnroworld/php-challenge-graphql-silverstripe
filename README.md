@@ -31,31 +31,37 @@ First, you have to go to this URL to be able to see the graphiql(playground):
 http://localhost/dev/graphiql
 ```
 
-Type this query(read):
+You can run a query with the following query(read):
 ```
 Write your query or mutation here
 {
   Body {
-    url
-    icon
-    type
     label
+    url
+    type
   }
 }
 ```
 
-Type this mutation(create) to test some adding data:
+You can run a mutation(create) to test some adding data:
 ```
 # Write your query or mutation here
 mutation($label: String!, $url: String, $url: String, $url: String) {
   createBody(label: $label, url: $url) {
     label
     url
-    icon
     type
   }
 }
 ```
+
+This will create a body with a label, url, and type, which you can pass in as query variables:
+
+{
+  "label": "test_label1",
+  "url": "test_url1",
+  "type": "test_type1"
+}
 
 ## In Progress
 
