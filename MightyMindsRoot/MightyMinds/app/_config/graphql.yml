@@ -1,0 +1,79 @@
+---
+Name: app-graphql
+After:
+  - graphqlconfig
+---
+SilverStripe\GraphQL\Controller:
+  cors:
+    Enabled: true
+    Allow-Origin: '*'
+    Allow-Headers: 'Authorization, Content-Type'
+    Allow-Methods:  'GET, POST, OPTIONS'
+    Max-Age: 86400
+SilverStripe\GraphQL\Manager:
+  schemas:
+    default:
+      mutations:
+        createBody: 'MyProject\GraphQL\CreateBodyMutationCreator'
+      types:
+        help: 'MyProject\GraphQL\HelpTypeCreator'
+        Teachers: 'MyProject\GraphQL\TeacherTypeCreator'
+        submenu: 'MyProject\GraphQL\SubMenuTypeCreator'
+        ProfileMenu: 'MyProject\GraphQL\ProfileMenuTypeCreator'
+        dropdown: 'MyProject\GraphQL\DropdownTypeCreator'
+        main: 'MyProject\GraphQL\MainTypeCreator'
+        TopMenu: 'MyProject\GraphQL\TopMenuTypeCreator'
+        Links: 'MyProject\GraphQL\LinksTypeCreator'
+        BodyLinks: 'MyProject\GraphQL\BodyLinksTypeCreator'
+        Body: 'MyProject\GraphQL\BodyTypeCreator'
+        WidgetURLS: 'MyProject\GraphQL\WidgetURLSTypeCreator'
+        SidebarWidgets: 'MyProject\GraphQL\SidebarWidgetsTypeCreator'
+        Data: 'MyProject\GraphQL\DataTypeCreator'
+        Report: 'MyProject\GraphQL\ReportTypeCreator'
+        url: 'MyProject\GraphQL\URLTypeCreator'
+        Header: 'MyProject\GraphQL\HeaderTypeCreator'
+        Contents: 'MyProject\GraphQL\ContentsTypeCreator'
+        Home: 'MyProject\GraphQL\HomepageTypeCreator'
+        infobar: 'MyProject\GraphQL\InfobarTypeCreator'
+        GridUrls: 'MyProject\GraphQL\GridUrlsTypeCreator'
+        BottomLinks: 'MyProject\GraphQL\BottomLinksTypeCreator'
+        ContextMenu: 'MyProject\GraphQL\ContextMenuTypeCreator'
+        ClassesData: 'MyProject\GraphQL\ClassesDataTypeCreator'
+        classMenus: 'MyProject\GraphQL\ClassMenusTypeCreator'
+        schoolSubscriptions: 'MyProject\GraphQL\SchoolSubscriptionsTypeCreator'
+        user: 'MyProject\GraphQL\UserTypeCreator'
+        Session: 'MyProject\GraphQL\SessionTypeCreator'
+        dropdowns: 'MyProject\GraphQL\DropdownsTypeCreator'
+        bodyActions: 'MyProject\GraphQL\BodyActionsTypeCreator'
+        Classes: 'MyProject\GraphQL\ClassesTypeCreator'
+      queries:
+        help: 'MyProject\GraphQL\HelpQueryCreator'
+        Teachers: 'MyProject\GraphQL\TeachersQueryCreator'
+        submenu: 'MyProject\GraphQL\SubMenuQueryCreator'
+        ProfileMenu: 'MyProject\GraphQL\ProfileMenuQueryCreator'
+        dropdown: 'MyProject\GraphQL\DropdownQueryCreator'
+        main: 'MyProject\GraphQL\MainQueryCreator'
+        TopMenu: 'MyProject\GraphQL\TopMenuQueryCreator'
+        Links: 'MyProject\GraphQL\LinksQueryCreator'
+        BodyLinks: 'MyProject\GraphQL\BodyLinksQueryCreator'
+        Body: 'MyProject\GraphQL\BodyQueryCreator'
+        WidgetURLS: 'MyProject\GraphQL\WidgetURLSQueryCreator'
+        SidebarWidgets: 'MyProject\GraphQL\SidebarWidgetsQueryCreator'
+        Data: 'MyProject\GraphQL\DataQueryCreator'
+        Report: 'MyProject\GraphQL\ReportQueryCreator'
+        url: 'MyProject\GraphQL\URLQueryCreator'
+        Header: 'MyProject\GraphQL\HeaderQueryCreator'
+        Contents: 'MyProject\GraphQL\ContentsQueryCreator'
+        Home: 'MyProject\GraphQL\HomepageQueryCreator'
+        infobar: 'MyProject\GraphQL\InfobarQueryCreator'
+        GridUrls: 'MyProject\GraphQL\GridUrlsQueryCreator'
+        BottomLinks: 'MyProject\GraphQL\BottomLinksQueryCreator'
+        ContextMenu: 'MyProject\GraphQL\ContextMenuQueryCreator'
+        ClassesData: 'MyProject\GraphQL\ClassesDataQueryCreator'
+        classMenus: 'MyProject\GraphQL\ClassMenusQueryCreator'
+        schoolSubscriptions: 'MyProject\GraphQL\SchoolSubscriptionsQueryCreator'
+        user: 'MyProject\GraphQL\UserQueryCreator'
+        Session: 'MyProject\GraphQL\SessionQueryCreator'
+        dropdowns: 'MyProject\GraphQL\DropdownsQueryCreator'
+        bodyActions: 'MyProject\GraphQL\BodyActionsQueryCreator'
+        Classes: 'MyProject\GraphQL\ClassesQueryCreator'

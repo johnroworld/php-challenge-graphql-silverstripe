@@ -1,0 +1,42 @@
+version: "3"
+services:
+  php-apache:
+    image: mitlabs/apache-php8.0
+    depends_on:
+      - mightymariadb
+    restart: 'always'
+    ports:
+      - 80:80
+    volumes:
+      - ./MightyMindsRoot/MightyMinds:/var/www/html/
+    links:
+      - "mightymariadb"
+    networks:
+      MightyMindsNetwork:
+        ipv4_address: 172.22.0.03
+  mightymariadb:
+    image: mariadb:latest
+    networks:
+      MightyMindsNetwork:
+        ipv4_address: 172.22.0.02
+    restart: 'always'
+    volumes:
+      - mightymariadb:/var/lib/mysql
+    environment:
+      GENERIC_TIMEZONE: "Australia/Brisbane"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: "domenico123"
+      MYSQL_USER: "mightyminds"
+      MYSQL_PASSWORD: "domenico123"
+      MYSQL_DATABASE: "mightymindsdb"
+    ports:
+      - 3306:3306
+volumes:
+  mightymariadb:
+networks:
+  MightyMindsNetwork:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.22.0.0/24
